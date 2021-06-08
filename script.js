@@ -8,11 +8,14 @@ let computerWins=0;
 let playerWins=0;
 let winner="";
 //Computer's turn
-computerPlay()
+function computerPlay() {
 //randomly choose "rock","paper", or "scissors"
-
+computerChoice= gameArray[Math.floor(Math.random() * 3)];
 //display choice
-
+console.log(computerChoice)
+return computerChoice;
+}
+computerPlay();
 //player's turn
 //functionName
 //display options
