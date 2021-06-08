@@ -1,6 +1,6 @@
 //start game
 //create variables: array, computerChoice, playerChoice, 
-let gameArray=["rock", "paper", "scissors"];
+const gameArray=["rock", "paper", "scissors"];
 let playerChoice="";
 let roundCount=0;
 let computerWins=0;
