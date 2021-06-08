@@ -1,7 +1,7 @@
 //start game
 //create variables: array, computerSelection, playerSelection, 
 const gameArray=["rock", "paper", "scissors"];
-let playerSelection="";
+let playerSelection;
 let computerSelection;
 let roundCount=0;
 let computerWins=0;
@@ -14,8 +14,6 @@ return gameArray[Math.floor(Math.random() * 3)];
 }
 computerSelection= computerPlay();
 //player's turn
-//functionName
-//display options
 
 //Take input
 
