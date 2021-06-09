@@ -1,4 +1,9 @@
 //start game
+//create variables
+const gameArray=["rock", "paper", "scissors"];
+let playerSelection;
+let computerSelection;
+
 
 function computerPlay() {
 //randomly choose "rock","paper", or "scissors"
@@ -48,10 +53,8 @@ if (playerSelection=="scissors" && computerSelection=="paper") {
 //increment win count of computer or player
 
 function game() {
-//create variables
-const gameArray=["rock", "paper", "scissors"];
-let playerSelection;
-let computerSelection;
+    let computerWins=0
+    let playerWins=0;
 //define game count
 let gameCount=5;
 //use loop to play multiple games
@@ -67,7 +70,29 @@ playerSelection=prompt("Make your selection!").toLowerCase();
 //log choice
 console.log(`playerSelection: ${playerSelection}`)
 //play a round
-console.log(playRound(playerSelection,computerSelection));
+let result=playRound(playerSelection,computerSelection)
+console.log(result);
+//if computer wins, add to computer score
+if (result.includes("Computer")) {
+computerWins++;
+}
+//if player wins, add to player score
+else if (result.includes("Player")) {
+playerWins++
+}
+//otherwise, no wins
+console.log(`Computer: ${computerWins}  Player: ${playerWins}`)
+}
+console.log(`Computer: ${computerWins}  Player: ${playerWins}`)
+//declare winner
+if (computerWins>playerWins) {
+    console.log("Computer wins the game!");
+}
+else if (computerWins<playerWins) {
+    console.log("Player wins the game!");
+}
+else {
+    console.log("Tie!")
 }
 }
 //display wins and losses
