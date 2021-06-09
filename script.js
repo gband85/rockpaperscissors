@@ -14,7 +14,7 @@ console.log(`computerSelection: ${computerSelection}`)
 //player's turn
 
 //Take input
-playerSelection=prompt("Make your selection!");
+playerSelection=prompt("Make your selection!").toLowerCase();
 console.log(`playerSelection: ${playerSelection}`)
 //Compare to computer's choice
 function playRound(playerSelection,computerSelection) {
