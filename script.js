@@ -1,16 +1,10 @@
 //start game
-//create variables
-const gameArray=["rock", "paper", "scissors"];
-let playerSelection;
-let computerSelection;
 
-//Computer's turn
 function computerPlay() {
 //randomly choose "rock","paper", or "scissors"
 return gameArray[Math.floor(Math.random() * 3)];
 }
 
-//Compare to computer's choice
 function playRound(playerSelection,computerSelection) {
 //if playerSelection=rock and computerSelection = rock return "Tie!"
 if (playerSelection=="rock" && computerSelection=="rock") {
@@ -54,18 +48,25 @@ if (playerSelection=="scissors" && computerSelection=="paper") {
 //increment win count of computer or player
 
 function game() {
+//create variables
+const gameArray=["rock", "paper", "scissors"];
+let playerSelection;
+let computerSelection;
 //define game count
 let gameCount=5;
 //use loop to play multiple games
 for (let i=1; i<=gameCount; i++) {
-
+//Computer's turn
 computerSelection= computerPlay();
+//log computer choice
 console.log(`computerSelection: ${computerSelection}`)
 //player's turn
 
 //Take input
 playerSelection=prompt("Make your selection!").toLowerCase();
+//log choice
 console.log(`playerSelection: ${playerSelection}`)
+//play a round
 console.log(playRound(playerSelection,computerSelection));
 }
 }
