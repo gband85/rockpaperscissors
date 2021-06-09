@@ -54,6 +54,11 @@ if (playerSelection=="scissors" && computerSelection=="paper") {
 //increment win count of computer or player
 
 function game() {
+//define game count
+let gameCount=5;
+//use loop to play multiple games
+for (let i=1; i<=gameCount; i++) {
+
 computerSelection= computerPlay();
 console.log(`computerSelection: ${computerSelection}`)
 //player's turn
@@ -63,7 +68,7 @@ playerSelection=prompt("Make your selection!").toLowerCase();
 console.log(`playerSelection: ${playerSelection}`)
 console.log(playRound(playerSelection,computerSelection));
 }
-
+}
 //display wins and losses
 
 //loop 5 times
