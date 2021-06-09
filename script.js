@@ -3,17 +3,11 @@
 const gameArray=["rock", "paper", "scissors"];
 let playerSelection;
 let computerSelection;
-let roundCount=0;
-let computerWins=0;
-let playerWins=0;
-let winner="";
 
 //Computer's turn
 function computerPlay() {
 //randomly choose "rock","paper", or "scissors"
-let result=gameArray[Math.floor(Math.random() * 3)];
-// console.log(`computerSelection: ${result}`);
-return result;
+return gameArray[Math.floor(Math.random() * 3)];
 }
 computerSelection= computerPlay();
 console.log(`computerSelection: ${computerSelection}`)
@@ -62,8 +56,7 @@ if (playerSelection=="scissors" && computerSelection=="paper") {
     return "Scissors cut paper. Computer wins!";
     }
 }
-winner = playRound(playerSelection,computerSelection)
-console.log(winner)
+console.log(playRound(playerSelection,computerSelection))
 //increment win count of computer or player
 
 //display wins and losses
