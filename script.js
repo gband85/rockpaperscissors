@@ -9,13 +9,7 @@ function computerPlay() {
 //randomly choose "rock","paper", or "scissors"
 return gameArray[Math.floor(Math.random() * 3)];
 }
-computerSelection= computerPlay();
-console.log(`computerSelection: ${computerSelection}`)
-//player's turn
 
-//Take input
-playerSelection=prompt("Make your selection!").toLowerCase();
-console.log(`playerSelection: ${playerSelection}`)
 //Compare to computer's choice
 function playRound(playerSelection,computerSelection) {
 //if playerSelection=rock and computerSelection = rock return "Tie!"
@@ -56,8 +50,19 @@ if (playerSelection=="scissors" && computerSelection=="paper") {
     return "Scissors cut paper. Computer wins!";
     }
 }
-console.log(playRound(playerSelection,computerSelection))
+
 //increment win count of computer or player
+
+function game() {
+computerSelection= computerPlay();
+console.log(`computerSelection: ${computerSelection}`)
+//player's turn
+
+//Take input
+playerSelection=prompt("Make your selection!").toLowerCase();
+console.log(`playerSelection: ${playerSelection}`)
+console.log(playRound(playerSelection,computerSelection));
+}
 
 //display wins and losses
 
