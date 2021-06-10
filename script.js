@@ -82,8 +82,10 @@ else if (result.includes("Player")) {
 playerWins++
 }
 //otherwise, no wins
+//display score
 console.log(`Computer: ${computerWins}  Player: ${playerWins}`)
 }
+//display final score
 console.log(`Final Score:\nComputer: ${computerWins}\nPlayer: ${playerWins}`)
 //declare winner
 if (computerWins>playerWins) {
@@ -96,10 +98,3 @@ else {
     console.log("Tie!")
 }
 }
-//display wins and losses
-
-//loop 5 times
-
-//display match winner
-
-//end game
