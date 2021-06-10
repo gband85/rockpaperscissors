@@ -1,4 +1,4 @@
-//start game
+
 //create variables
 const gameArray=["rock", "paper", "scissors"];
 let playerSelection;
@@ -29,7 +29,7 @@ if (playerSelection=="rock" && computerSelection=="scissors") {
 return "Rock smashes scissors. Player wins!";
 }
 //if playerSelection=scissors and computerSelection = rock return "Rock smashes scissors. Computer wins!"
-if (playerSelection=="rock" && computerSelection=="scissors") {
+if (playerSelection=="scissors" && computerSelection=="rock") {
     return "Rock smashes scissors. Computer wins!";
     }
 //if playerSelection=rock and computerSelection = paper return "Paper covers rock. Computer wins!"
