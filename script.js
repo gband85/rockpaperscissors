@@ -59,6 +59,7 @@ function game() {
 let gameCount=5;
 //use loop to play multiple games
 for (let i=1; i<=gameCount; i++) {
+console.log(`Game ${i}`)  
 //Computer's turn
 computerSelection= computerPlay();
 //log computer choice
@@ -83,7 +84,7 @@ playerWins++
 //otherwise, no wins
 console.log(`Computer: ${computerWins}  Player: ${playerWins}`)
 }
-console.log(`Computer: ${computerWins}  Player: ${playerWins}`)
+console.log(`Final Score:\nComputer: ${computerWins}\nPlayer: ${playerWins}`)
 //declare winner
 if (computerWins>playerWins) {
     console.log("Computer wins the game!");
