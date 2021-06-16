@@ -50,9 +50,11 @@ if (playerSelection=="scissors" && computerSelection=="paper") {
     }
 }
 
+
+
 //increment win count of computer or player
 
-function game() {
+/*function game() {
     let computerWins=0
     let playerWins=0;
 //define game count
@@ -97,4 +99,4 @@ else if (computerWins<playerWins) {
 else {
     console.log("Tie!")
 }
-}
+}*/
