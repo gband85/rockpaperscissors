@@ -38,7 +38,7 @@ if (playerSelection=="rock" && computerSelection=="paper") {
     }
 //if playerSelection=paper and computerSelection = rock return "Paper covers rock. Player wins!"
 if (playerSelection=="paper" && computerSelection=="rock") {
-    return "Paper covers rock. Computer wins!";
+    return "Paper covers rock. Player wins!";
     }
 //if playerSelection=paper and computerSelection = scissors return "Scissors cut paper. Computer wins!"
 if (playerSelection=="paper" && computerSelection=="scissors") {
@@ -46,7 +46,7 @@ if (playerSelection=="paper" && computerSelection=="scissors") {
     }
 //if playerSelection=scissors and computerSelection = paper return "Scissors cut paper. Player wins!"
 if (playerSelection=="scissors" && computerSelection=="paper") {
-    return "Scissors cut paper. Computer wins!";
+    return "Scissors cut paper. Player wins!";
     }
 }
 
