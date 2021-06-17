@@ -1,8 +1,8 @@
 
 //create variables
 const gameArray=["rock", "paper", "scissors"];
-let playerSelection;
-let computerSelection;
+// let playerSelection;
+// let computerSelection;
 
 
 function computerPlay() {
@@ -50,9 +50,30 @@ if (playerSelection=="scissors" && computerSelection=="paper") {
     }
 }
 
-let rock = document.querySelector(".rock")
-let paper = document.querySelector(".paper")
-let scissors = document.querySelector(".scissors")
+let rock = document.querySelector(".rock");
+let paper = document.querySelector(".paper");
+let scissors = document.querySelector(".scissors");
+
+rock.addEventListener('click', function() {
+  let  playerSelection="rock";
+ let   computerSelection=computerPlay();
+  let result=  playRound(playerSelection,computerSelection);
+  console.log(result);
+})
+
+paper.addEventListener('click', function() {
+  let  playerSelection="paper";
+ let   computerSelection=computerPlay();
+  let result=  playRound(playerSelection,computerSelection);
+  console.log(result);
+})
+
+scissors.addEventListener('click', function() {
+  let  playerSelection="scissors";
+  let  computerSelection=computerPlay();
+  let result=  playRound(playerSelection,computerSelection);
+  console.log(result);
+})
 
 //increment win count of computer or player
 
