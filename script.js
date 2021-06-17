@@ -50,7 +50,9 @@ if (playerSelection=="scissors" && computerSelection=="paper") {
     }
 }
 
-
+let rock = document.querySelector(".rock")
+let paper = document.querySelector(".paper")
+let scissors = document.querySelector(".scissors")
 
 //increment win count of computer or player
 
