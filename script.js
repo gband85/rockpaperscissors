@@ -10,6 +10,14 @@ function computerPlay() {
 return gameArray[Math.floor(Math.random() * 3)];
 }
 
+function resetGame() {
+    computerWins=0;
+    playerWins=0;
+    score.textContent="";
+    h2.textContent="Click a button!";
+    //return;
+}
+
 function playRound(playerSelection,computerSelection) {
 //if playerSelection=rock and computerSelection = rock return "Tie!"
 if (playerSelection=="rock" && computerSelection=="rock") {
@@ -50,6 +58,40 @@ if (playerSelection=="scissors" && computerSelection=="paper") {
     }
 }
 
+function updateScore(result) {
+    //if either score reaches 5, determine match winner
+if (computerWins==5||playerWins==5) {
+    if (computerWins>playerWins) {
+        console.log("Computer wins the game!");
+        h2.textContent="Computer wins the game!"
+    }
+    else if (computerWins<playerWins) {
+        console.log("Player wins the game!");
+        h2.textContent="Player wins the game!"
+    }
+    else {
+        console.log("Tie!")
+        h2.textContent="Tie!"
+    } 
+} 
+else {
+//if computer wins, add to computer score
+if (result.includes("Computer")) {
+    computerWins++;
+    console.log(`computerWins: ${computerWins}`);
+    }
+    //if player wins, add to player score
+    else if (result.includes("Player")) {
+    playerWins++;
+    console.log(`playerWins: ${playerWins}`);
+    }
+
+    
+    score.textContent=`Player: ${playerWins} Computer: ${computerWins}`
+    
+}
+}
+
 //grab elements
 let rock = document.querySelector(".rock");
 let paper = document.querySelector(".paper");
@@ -63,11 +105,10 @@ let score = document.createElement('h2');
 //add to page
 display.appendChild(h2);
 display.appendChild(score);
+let computerWins;
+let playerWins;
 //reset game
-//set score to 0
-let computerWins=0;
-let playerWins=0;
-h2.textContent="Click a button!";
+resetGame();
 
 
 rock.addEventListener('click', function() {
@@ -104,46 +145,9 @@ reset.addEventListener('click', function() {
     resetGame();
 })
 
-function resetGame() {
-    computerWins=0;
-    playerWins=0;
-    score.textContent="";
-    //return;
-}
 
-function updateScore(result) {
-    //if either score reaches 5, determine match winner
-if (computerWins==5||playerWins==5) {
-    if (computerWins>playerWins) {
-        console.log("Computer wins the game!");
-        h2.textContent="Computer wins the game!"
-    }
-    else if (computerWins<playerWins) {
-        console.log("Player wins the game!");
-        h2.textContent="Player wins the game!"
-    }
-    else {
-        console.log("Tie!")
-        h2.textContent="Tie!"
-    } 
-} 
-else {
-//if computer wins, add to computer score
-if (result.includes("Computer")) {
-    computerWins++;
-    console.log(`computerWins: ${computerWins}`);
-    }
-    //if player wins, add to player score
-    else if (result.includes("Player")) {
-    playerWins++;
-    console.log(`playerWins: ${playerWins}`);
-    }
 
-    
-    score.textContent=`Player: ${playerWins} Computer: ${computerWins}`
-    
-}
-}
+
 //increment win count of computer or player
 
 /*function game() {
