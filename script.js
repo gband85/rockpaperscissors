@@ -13,8 +13,8 @@ return gameArray[Math.floor(Math.random() * 3)];
 function resetGame() {
     computerWins=0;
     playerWins=0;
-    score.textContent="";
-    h2.textContent="Click a button!";
+    score.textContent=`Player: ${playerWins} Computer: ${computerWins}`;
+    h2.textContent="Click a button to start!";
     rock.removeAttribute("disabled");
     paper.removeAttribute("disabled");
     scissors.removeAttribute("disabled");
