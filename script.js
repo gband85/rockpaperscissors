@@ -53,12 +53,17 @@ if (playerSelection=="scissors" && computerSelection=="paper") {
 let rock = document.querySelector(".rock");
 let paper = document.querySelector(".paper");
 let scissors = document.querySelector(".scissors");
+let display = document.querySelector(".display");
+let h2 = document.createElement("h2");
+h2.textContent="Click a button!";
+display.appendChild(h2);
 
 rock.addEventListener('click', function() {
-  let  playerSelection="rock";
- let   computerSelection=computerPlay();
+  let playerSelection="rock";
+  let computerSelection=computerPlay();
   let result=  playRound(playerSelection,computerSelection);
   console.log(result);
+  h2.textContent=result;
 })
 
 paper.addEventListener('click', function() {
@@ -66,6 +71,7 @@ paper.addEventListener('click', function() {
  let   computerSelection=computerPlay();
   let result=  playRound(playerSelection,computerSelection);
   console.log(result);
+  h2.textContent=result;
 })
 
 scissors.addEventListener('click', function() {
@@ -73,6 +79,7 @@ scissors.addEventListener('click', function() {
   let  computerSelection=computerPlay();
   let result=  playRound(playerSelection,computerSelection);
   console.log(result);
+  h2.textContent=result;
 })
 
 //increment win count of computer or player
