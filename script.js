@@ -100,9 +100,14 @@ scissors.addEventListener('click', function() {
   updateScore(result)
 })
 
+reset.addEventListener('click', function() {
+    resetGame();
+})
+
 function resetGame() {
     computerWins=0;
     playerWins=0;
+    score.textContent="";
     //return;
 }
 
