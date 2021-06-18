@@ -100,7 +100,11 @@ scissors.addEventListener('click', function() {
   updateScore(result)
 })
 
-
+function resetGame() {
+    computerWins=0;
+    playerWins=0;
+    //return;
+}
 
 function updateScore(result) {
     //if either score reaches 5, determine match winner
@@ -122,15 +126,17 @@ else {
 //if computer wins, add to computer score
 if (result.includes("Computer")) {
     computerWins++;
+    console.log(`computerWins: ${computerWins}`);
     }
     //if player wins, add to player score
     else if (result.includes("Player")) {
-    playerWins++
+    playerWins++;
+    console.log(`playerWins: ${playerWins}`);
     }
 
-    else {
+    
     score.textContent=`Player: ${playerWins} Computer: ${computerWins}`
-    }
+    
 }
 }
 //increment win count of computer or player
