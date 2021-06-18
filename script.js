@@ -93,10 +93,10 @@ if (result.includes("Computer")) {
 }
 
 //grab elements
-let rock = document.querySelector(".rock");
-let paper = document.querySelector(".paper");
-let scissors = document.querySelector(".scissors");
-let reset = document.querySelector(".reset")
+let rock = document.querySelector("#rock");
+let paper = document.querySelector("#paper");
+let scissors = document.querySelector("#scissors");
+let reset = document.querySelector("#reset")
 //grab display
 let display = document.querySelector(".display");
 //create display sub-elements
