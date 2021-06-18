@@ -54,6 +54,7 @@ if (playerSelection=="scissors" && computerSelection=="paper") {
 let rock = document.querySelector(".rock");
 let paper = document.querySelector(".paper");
 let scissors = document.querySelector(".scissors");
+let reset = document.querySelector(".reset")
 //grab display
 let display = document.querySelector(".display");
 //create display sub-elements
@@ -99,7 +100,25 @@ scissors.addEventListener('click', function() {
   updateScore(result)
 })
 
+
+
 function updateScore(result) {
+    //if either score reaches 5, determine match winner
+if (computerWins==5||playerWins==5) {
+    if (computerWins>playerWins) {
+        console.log("Computer wins the game!");
+        h2.textContent="Computer wins the game!"
+    }
+    else if (computerWins<playerWins) {
+        console.log("Player wins the game!");
+        h2.textContent="Player wins the game!"
+    }
+    else {
+        console.log("Tie!")
+        h2.textContent="Tie!"
+    } 
+} 
+else {
 //if computer wins, add to computer score
 if (result.includes("Computer")) {
     computerWins++;
@@ -108,7 +127,11 @@ if (result.includes("Computer")) {
     else if (result.includes("Player")) {
     playerWins++
     }
+
+    else {
     score.textContent=`Player: ${playerWins} Computer: ${computerWins}`
+    }
+}
 }
 //increment win count of computer or player
 
