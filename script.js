@@ -50,13 +50,24 @@ if (playerSelection=="scissors" && computerSelection=="paper") {
     }
 }
 
+//grab elements
 let rock = document.querySelector(".rock");
 let paper = document.querySelector(".paper");
 let scissors = document.querySelector(".scissors");
+//grab display
 let display = document.querySelector(".display");
+//create display sub-elements
 let h2 = document.createElement("h2");
-h2.textContent="Click a button!";
+let score = document.createElement('h2');
+//add to page
 display.appendChild(h2);
+display.appendChild(score);
+//reset game
+//set score to 0
+let computerWins=0;
+let playerWins=0;
+h2.textContent="Click a button!";
+
 
 rock.addEventListener('click', function() {
   let playerSelection="rock";
@@ -64,6 +75,8 @@ rock.addEventListener('click', function() {
   let result=  playRound(playerSelection,computerSelection);
   console.log(result);
   h2.textContent=result;
+  //update score
+  updateScore(result)
 })
 
 paper.addEventListener('click', function() {
@@ -72,6 +85,8 @@ paper.addEventListener('click', function() {
   let result=  playRound(playerSelection,computerSelection);
   console.log(result);
   h2.textContent=result;
+  //update score
+  updateScore(result)
 })
 
 scissors.addEventListener('click', function() {
@@ -80,13 +95,25 @@ scissors.addEventListener('click', function() {
   let result=  playRound(playerSelection,computerSelection);
   console.log(result);
   h2.textContent=result;
+  //update score
+  updateScore(result)
 })
 
+function updateScore(result) {
+//if computer wins, add to computer score
+if (result.includes("Computer")) {
+    computerWins++;
+    }
+    //if player wins, add to player score
+    else if (result.includes("Player")) {
+    playerWins++
+    }
+    score.textContent=`Player: ${playerWins} Computer: ${computerWins}`
+}
 //increment win count of computer or player
 
 /*function game() {
-    let computerWins=0
-    let playerWins=0;
+  
 //define game count
 let gameCount=5;
 //use loop to play multiple games
