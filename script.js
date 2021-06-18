@@ -15,6 +15,9 @@ function resetGame() {
     playerWins=0;
     score.textContent="";
     h2.textContent="Click a button!";
+    rock.removeAttribute("disabled");
+    paper.removeAttribute("disabled");
+    scissors.removeAttribute("disabled");
     //return;
 }
 
@@ -72,7 +75,10 @@ if (computerWins==5||playerWins==5) {
     else {
         console.log("Tie!")
         h2.textContent="Tie!"
-    } 
+    }
+    rock.setAttribute("disabled","true");
+    paper.setAttribute("disabled","true");
+    scissors.setAttribute("disabled","true");
 } 
 else {
 //if computer wins, add to computer score
