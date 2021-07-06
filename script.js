@@ -14,7 +14,7 @@ function resetGame() {
     computerWins=0;
     playerWins=0;
     score.textContent=`Player: ${playerWins} Computer: ${computerWins}`;
-    h2.textContent="Click a button to start!";
+    outcome.textContent="Click a button to start!";
     rock.removeAttribute("disabled");
     paper.removeAttribute("disabled");
     scissors.removeAttribute("disabled");
@@ -63,18 +63,18 @@ if (playerSelection=="scissors" && computerSelection=="paper") {
 
 function updateScore(result) {
     //if either score reaches 5, determine match winner
-if (computerWins==5||playerWins==5) {
+if (computerWins===5||playerWins===5) {
     if (computerWins>playerWins) {
         console.log("Computer wins the game!");
-        h2.textContent="Computer wins the game!"
+        outcome.textContent="Computer wins the game!"
     }
     else if (computerWins<playerWins) {
         console.log("Player wins the game!");
-        h2.textContent="Player wins the game!"
+        outcome.textContent="Player wins the game!"
     }
     else {
         console.log("Tie!")
-        h2.textContent="Tie!"
+        outcome.textContent="Tie!"
     }
     rock.setAttribute("disabled","true");
     paper.setAttribute("disabled","true");
@@ -106,10 +106,10 @@ let reset = document.querySelector("#reset")
 //grab display
 let display = document.querySelector(".display");
 //create display sub-elements
-let h2 = document.createElement("h2");
-let score = document.createElement('h2');
+let outcome = document.createElement("h1");
+let score = document.createElement('h1');
 //add to page
-display.appendChild(h2);
+display.appendChild(outcome);
 display.appendChild(score);
 let computerWins;
 let playerWins;
@@ -122,7 +122,7 @@ rock.addEventListener('click', function() {
   let computerSelection=computerPlay();
   let result=  playRound(playerSelection,computerSelection);
   console.log(result);
-  h2.textContent=result;
+  outcome.textContent=result;
   //update score
   updateScore(result)
 })
@@ -132,7 +132,7 @@ paper.addEventListener('click', function() {
  let   computerSelection=computerPlay();
   let result=  playRound(playerSelection,computerSelection);
   console.log(result);
-  h2.textContent=result;
+  outcome.textContent=result;
   //update score
   updateScore(result)
 })
@@ -142,7 +142,7 @@ scissors.addEventListener('click', function() {
   let  computerSelection=computerPlay();
   let result=  playRound(playerSelection,computerSelection);
   console.log(result);
-  h2.textContent=result;
+  outcome.textContent=result;
   //update score
   updateScore(result)
 })
