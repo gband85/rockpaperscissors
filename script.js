@@ -1,9 +1,22 @@
 
 //create variables
 const gameArray=["rock", "paper", "scissors"];
-// let playerSelection;
-// let computerSelection;
 
+//grab elements
+let rock = document.querySelector("#rock");
+let paper = document.querySelector("#paper");
+let scissors = document.querySelector("#scissors");
+let reset = document.querySelector("#reset");
+let game=document.querySelector("#game");
+let outcome = document.querySelector("#outcome");
+let score = document.querySelector("#score");
+//grab display
+let display = document.querySelector(".display");
+let computerWins;
+let playerWins;
+let currentGame;
+//reset game
+resetGame();
 
 function computerPlay() {
 //randomly choose "rock","paper", or "scissors"
@@ -13,8 +26,10 @@ return gameArray[Math.floor(Math.random() * 3)];
 function resetGame() {
     computerWins=0;
     playerWins=0;
-    score.textContent=`Player: ${playerWins} Computer: ${computerWins}`;
+    games=1;
+    score.textContent=`Player: Computer: `;
     outcome.textContent="Click a button to start!";
+    game.textContent="Game 1";
     rock.removeAttribute("disabled");
     paper.removeAttribute("disabled");
     scissors.removeAttribute("disabled");
@@ -63,7 +78,7 @@ if (playerSelection=="scissors" && computerSelection=="paper") {
 
 function updateScore(result) {
     //if either score reaches 5, determine match winner
-if (computerWins===5||playerWins===5) {
+if (currentGame===5) {
     if (computerWins>playerWins) {
         console.log("Computer wins the game!");
         outcome.textContent="Computer wins the game!"
@@ -94,28 +109,11 @@ if (result.includes("Computer")) {
 
     
     score.textContent=`Player: ${playerWins} Computer: ${computerWins}`
-    
-}
+    game.textContent=`Game ${currentGame}`;
+    currentGame++;
 }
 
-//grab elements
-let rock = document.querySelector("#rock");
-let paper = document.querySelector("#paper");
-let scissors = document.querySelector("#scissors");
-let reset = document.querySelector("#reset")
-//grab display
-let display = document.querySelector(".display");
-//create display sub-elements
-let outcome = document.createElement("h1");
-let score = document.createElement('h1');
-//add to page
-display.appendChild(outcome);
-display.appendChild(score);
-let computerWins;
-let playerWins;
-//reset game
-resetGame();
-
+}
 
 rock.addEventListener('click', function() {
   let playerSelection="rock";
