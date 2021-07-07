@@ -75,7 +75,22 @@ function playRound(playerSelection, computerSelection) {
 
 function updateScore(result) {
     //if either score reaches 5, determine match winner
-    if (playerWins == 5 || computerWins == 5) {
+    while (playerWins < 5 && computerWins < 5) {
+        if (result.includes("Computer")) {
+            computerWins++;
+            console.log(`computerWins: ${computerWins}`);
+        }
+        //if player wins, add to player score
+        else if (result.includes("Player")) {
+            playerWins++;
+            console.log(`playerWins: ${playerWins}`);
+        }
+
+
+        score.textContent = `Player: ${playerWins} Computer: ${computerWins}`;
+        return;
+    }
+
         if (computerWins > playerWins) {
             console.log("Computer wins the game!");
             outcome.textContent = "Computer wins the game!"
@@ -92,23 +107,9 @@ function updateScore(result) {
         paper.setAttribute("disabled", "true");
         scissors.setAttribute("disabled", "true");
     }
-    else {
-        //if computer wins, add to computer score
-        if (result.includes("Computer")) {
-            computerWins++;
-            console.log(`computerWins: ${computerWins}`);
-        }
-        //if player wins, add to player score
-        else if (result.includes("Player")) {
-            playerWins++;
-            console.log(`playerWins: ${playerWins}`);
-        }
+ 
 
 
-        score.textContent = `Player: ${playerWins} Computer: ${computerWins}`
-    }
-
-}
 
 rock.addEventListener('click', function () {
     let playerSelection = "rock";
