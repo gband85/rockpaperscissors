@@ -74,6 +74,7 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function updateScore(result) {
+    //after round, increment score before checking for game winner
     if (result.includes("Computer")) {
             computerWins++;
             console.log(`computerWins: ${computerWins}`);
